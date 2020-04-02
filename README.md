@@ -1,2 +1,2 @@
 # digitalocean
-DigitalOcean Marketplace image fir Offen
+DigitalOcean Marketplace image for Offen
