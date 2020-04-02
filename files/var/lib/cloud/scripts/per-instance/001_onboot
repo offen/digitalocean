@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo "OFFEN_SECRETS_COOKIE_EXCHANGE=\"$(openssl rand -base64 16)\"\n" >> /etc/offen/offen.env
+echo "OFFEN_SECRETS_COOKIEEXCHANGE=\"$(openssl rand -base64 16)\"\n" >> /etc/offen/offen.env
 systemctl start offen
