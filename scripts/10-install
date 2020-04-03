@@ -1,0 +1,25 @@
+#!/bin/bash
+set -eo pipefail
+
+download () {
+  version=$1
+  mkdir -p /tmp/offen-download && cd /tmp/offen-download
+  curl -sSL https://get.offen.dev/$version | tar -xvz
+  md5sum -c checksums.txt
+  mkdir -p /opt/offen/$version
+  cp offen-linux-amd64 /opt/offen/$version
+  ln -s /opt/offen/$version/offen-linux-amd64 /usr/bin/offen
+}
+
+scaffold () {
+  mkdir -p /var/opt/offen
+  mkdir -p /var/www/.cache
+  mkdir -p /etc/offen && touch /etc/offen/offen.env
+}
+
+echo "---> Downloading and verifying binary file..."
+download $OFFEN_VERSION
+echo "---> Successfully installed offen command."
+echo "---> Scaffolding directory structure ..."
+scaffold
+echo "---> Successfully set up directory structure."

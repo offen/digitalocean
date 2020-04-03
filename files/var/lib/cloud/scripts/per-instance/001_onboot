@@ -1,4 +1,9 @@
 #!/bin/bash
+set -eo pipefail
 
-echo "OFFEN_SECRETS_COOKIEEXCHANGE=\"$(openssl rand -base64 16)\"\n" >> /etc/offen/offen.env
-systemctl start offen
+cat >> /etc/offen/offen.env << EOL
+OFFEN_SECRETS_COOKIEEXCHANGE=\"$(openssl rand -base64 16)\"
+OFFEN_SERVER_AUTOTLS="offen.my.domain"
+EOL
+
+systemctl restart offen
