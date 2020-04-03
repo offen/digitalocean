@@ -1,7 +1,17 @@
 #!/bin/bash
 set -eo pipefail
 
-read -p "Please provide the domain you are planning to serve Offen from (e.g. analytics.mydomain.com): " domain
+cat <<EOL
+
+To cancel setup, press Ctrl+C.  This script will run again on your next login.
+--------------------------------------------------
+Enter the domain name for your new Offen instance.
+(ex. offen.example.org or analytics.example.org) do not include www or http/s
+--------------------------------------------------
+
+EOL
+
+read -p "Provide domain name: " domain
 
 cat >> /etc/offen/offen.env <<EOL
 OFFEN_SERVER_AUTOTLS="${domain}"
@@ -14,18 +24,18 @@ cp -f /etc/skel/.bashrc /root/.bashrc
 
 cat <<EOL
 
-********************************************************************************
+--------------------------------------------------
 
 Thank you for installing Offen! If you have DNS set up already, you can now
 head over to:
 
 https://${domain}/setup/
 
-and create your first  account.
+and create your first account.
 
 If you need support, send us an email at hioffen@posteo.de, tweet @hioffen
 or open an issue on our GitHub repository: https://github.com/offen/offen
 
-********************************************************************************
+--------------------------------------------------
 
 EOL
