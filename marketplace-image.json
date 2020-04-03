@@ -1,7 +1,7 @@
 {
   "variables": {
     "token": "{{env `DOTOKEN`}}",
-    "image_name": "offen-{{timestamp}}",
+    "image_name": "offen",
     "offen_version": "v0.1.0-alpha.5"
   },
   "builders": [
@@ -12,7 +12,7 @@
       "region": "fra1",
       "size": "s-1vcpu-1gb",
       "ssh_username": "root",
-      "snapshot_name": "{{user `image_name`}}-{{user `offen_version`}}"
+      "snapshot_name": "{{user `image_name`}}-{{user `offen_version`}}-{{timestamp}}"
     }
   ],
   "provisioners": [
@@ -23,8 +23,8 @@
     },
     {
       "type": "file",
-      "source": "files/var/",
-      "destination": "/var/"
+      "source": "files/opt/",
+      "destination": "/opt/"
     },
     {
       "type": "shell",
@@ -43,6 +43,7 @@
         "scripts/10-install",
         "scripts/20-configure_service",
         "scripts/30-configure_firewall",
+        "scripts/40-add_firstrun",
         "scripts/90-cleanup",
         "scripts/99-img_check"
       ]

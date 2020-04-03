@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eo pipefail
+
+add_firstrun () {
+  echo "/opt/offen/scripts/10-first_run" >> /root/.bashrc
+}
+
+echo "---> Adding first run script to .bashrc file ..."
+add_firstrun
+echo "---> Successfully added first run script"

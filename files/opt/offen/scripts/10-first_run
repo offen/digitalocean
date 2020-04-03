@@ -1,0 +1,31 @@
+#!/bin/bash
+set -eo pipefail
+
+read -p "Please provide the domain you are planning to serve Offen from (e.g. analytics.mydomain.com): " domain
+
+cat >> /etc/offen/offen.env <<EOL
+OFFEN_SERVER_AUTOTLS="${domain}"
+OFFEN_SECRETS_COOKIEEXCHANGE="$(openssl rand -base64 16)"
+EOL
+
+systemctl restart offen
+
+cp -f /etc/skel/.bashrc /root/.bashrc
+
+cat <<EOL
+
+********************************************************************************
+
+Thank you for installing Offen! If you have DNS set up already, you can now
+head over to:
+
+https://${domain}/setup/
+
+and create your first  account.
+
+If you need support, send us an email at hioffen@posteo.de, tweet @hioffen
+or open an issue on our GitHub repository: https://github.com/offen/offen
+
+********************************************************************************
+
+EOL

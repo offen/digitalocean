@@ -6,10 +6,7 @@ myip=$(hostname -I | awk '{print$1}')
 cat <<EOF
 ********************************************************************************
 
-Thank you for using Offen! If you have just deployed the application head
-to "/setup" in your browser to finish the installation process.
-
-Find our documentation at: https://docs.offen.dev
+Thank you for using Offen! Find our documentation at: https://docs.offen.dev
 
 If you need support, send us an email at hioffen@posteo.de, tweet @hioffen
 or open an issue on our GitHub repository: https://github.com/offen/offen
