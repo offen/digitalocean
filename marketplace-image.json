@@ -2,7 +2,7 @@
   "variables": {
     "token": "{{env `DOTOKEN`}}",
     "image_name": "offen",
-    "offen_version": "v0.1.0-alpha.6"
+    "offen_version": "v0.1.0-alpha.7"
   },
   "builders": [
     {
