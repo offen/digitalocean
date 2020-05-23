@@ -15,7 +15,7 @@ read -p "Provide domain name: " domain
 
 cat >> /etc/offen/offen.env <<EOL
 OFFEN_SERVER_AUTOTLS="${domain}"
-OFFEN_SECRETS_COOKIEEXCHANGE="$(openssl rand -base64 16)"
+OFFEN_SECRET="$(openssl rand -base64 16)"
 EOL
 
 systemctl restart offen

@@ -5,10 +5,10 @@ configure_service () {
   touch /etc/systemd/system/offen.service
   cat > /etc/systemd/system/offen.service <<EOF
 [Unit]
-Description=Offen Service
+Description=Offen Web Analytics Service
 
 [Service]
-ExecStart=/usr/bin/offen
+ExecStart=/usr/local/bin/offen
 Restart=always
 
 [Install]

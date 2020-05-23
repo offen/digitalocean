@@ -8,7 +8,7 @@ download () {
   md5sum -c checksums.txt
   mkdir -p /opt/offen/$version
   cp offen-linux-amd64 /opt/offen/$version
-  ln -s /opt/offen/$version/offen-linux-amd64 /usr/bin/offen
+  ln -s /opt/offen/$version/offen-linux-amd64 /usr/local/bin/offen
 }
 
 scaffold () {
