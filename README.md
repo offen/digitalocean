@@ -1,4 +1,8 @@
-# digitalocean
+<a href="https://offen.dev/">
+    <img src="https://offen.github.io/press-kit/offen-material/gfx-GitHub-Offen-logo.svg" alt="Offen logo" title="Offen" width="150px"/>
+</a>
+
+# DigitalOcean
 DigitalOcean Marketplace image for Offen
 
 ## Building the image

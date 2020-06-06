@@ -1,9 +1,9 @@
 version: 2.1
 
 jobs:
-  deploy:
+  build:
     docker:
-      - image: cimg/python:3.7
+      - image: cimg/base:stable
     working_directory: ~/offen
     steps:
       - checkout
@@ -15,9 +15,9 @@ jobs:
 
 workflows:
   version: 2
-  deploy:
+  build:
     jobs:
-      - deploy:
+      - build:
           context: DigitalOcean
           filters:
             branches:
