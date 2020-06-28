@@ -3,7 +3,7 @@
     "token": "{{env `DOTOKEN`}}",
     "build": "{{env `CIRCLE_BUILD_NUM`}}",
     "image_name": "offen",
-    "offen_version": "v0.1.0-alpha.9"
+    "offen_version": "v0.1.0-alpha.10"
   },
   "builders": [
     {
