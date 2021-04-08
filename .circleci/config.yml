@@ -22,7 +22,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
 
 commands:
   install_packer:
