@@ -1,10 +1,8 @@
 #!/bin/bash
 set -eo pipefail
 
-export DEBIAN_FRONTEND=noninteractive
-
 apt-get -y update
-apt-get -y upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -yq upgrade
 rm -rf /tmp/* /var/tmp/*
 history -c
 cat /dev/null > /root/.bash_history
