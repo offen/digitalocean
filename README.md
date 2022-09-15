@@ -3,7 +3,7 @@
 </a>
 
 # DigitalOcean
-DigitalOcean Marketplace image for Offen
+DigitalOcean Marketplace image for Offen Fair Web Analytics
 
 ## Building the image
 
